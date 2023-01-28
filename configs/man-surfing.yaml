@@ -1,4 +1,4 @@
-pretrained_model_path: "/group/30042/zhangjiewu/downloads/stable-diffusion-v1-4"
+pretrained_model_path: "./checkpoints/stable-diffusion-v1-4"
 output_dir: "./outputs/man-surfing_lr3e-5_seed33"
 
 train_data:

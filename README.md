@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ```
 
 Installing [xformers](https://github.com/facebookresearch/xformers) is highly recommended for more efficiency and speed on GPUs. 
-To enable xformers, set `enable_xformers_memory_efficient_attention=True`.
+To enable xformers, set `enable_xformers_memory_efficient_attention=True` (default).
 
 ### Weights
 
