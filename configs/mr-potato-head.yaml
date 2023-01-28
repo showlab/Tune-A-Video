@@ -1,0 +1,39 @@
+pretrained_model_path: "./checkpoints/mr-potato-head"
+output_dir: "./outputs/mr-potato-head_lr3e-5_seed33"
+
+train_data:
+  video_path: "data/man-surfing.mp4"
+  prompt: "a man is surfing"
+  n_sample_frames: 8
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 1
+
+validation_data:
+  prompts:
+    - "sks mr potato head is surfing"
+    - "sks mr potato head, wearing a pink hat, is surfing"
+    - "sks mr potato head, wearing funny sunglasses, is surfing"
+    - "sks mr potato head is surfing in the forest"
+  video_length: 8
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 7.5
+
+learning_rate: 3e-5
+train_batch_size: 1
+max_train_steps: 500
+checkpointing_steps: 1000
+validation_steps: 100
+trainable_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+
+seed: 33
+mixed_precision: fp16
+use_8bit_adam: False
+gradient_checkpointing: True
+enable_xformers_memory_efficient_attention: True
