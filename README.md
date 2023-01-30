@@ -15,7 +15,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 [Mike Zheng Shou](https://sites.google.com/view/showlab)
 <br/>
 
-[Project Page](https://tuneavideo.github.io/) | [arXiv](https://arxiv.org/abs/2212.11565)
+[Project Page](https://tuneavideo.github.io/) | [arXiv](https://arxiv.org/abs/2212.11565) | [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Tune-A-Video-library/Tune-A-Video-Training-UI)
 
 ## Setup
 
