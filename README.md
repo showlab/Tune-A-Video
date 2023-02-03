@@ -18,6 +18,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 [![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://tuneavideo.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-2212.11565-b31b1b.svg)](https://arxiv.org/abs/2212.11565)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Tune-A-Video-library/Tune-A-Video-Training-UI)
+[![Hugging Face Library](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Library-green)](https://huggingface.co/spaces/Tune-A-Video-library/Tune-A-Video-Training-UI)
 
 
 <p align="center">
@@ -72,7 +73,7 @@ from tuneavideo.models.unet import UNet3DConditionModel
 from tuneavideo.util import save_videos_grid
 import torch
 
-pretrained_model_path: "./checkpoints/stable-diffusion-v1-4"
+pretrained_model_path = "./checkpoints/stable-diffusion-v1-4"
 unet_model_path = "./outputs/man-surfing/2023-XX-XXTXX-XX-XX"
 unet = UNet3DConditionModel.from_pretrained(unet_model_path, subfolder='unet', torch_dtype=torch.float16).to('cuda')
 pipe = TuneAVideoPipeline.from_pretrained(pretrained_model_path, unet=unet, torch_dtype=torch.float16).to("cuda")
