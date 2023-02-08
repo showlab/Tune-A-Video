@@ -18,7 +18,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 [![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://tuneavideo.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-2212.11565-b31b1b.svg)](https://arxiv.org/abs/2212.11565)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Tune-A-Video-library/Tune-A-Video-Training-UI)
-[![Hugging Face Library](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Library-green)](https://huggingface.co/spaces/Tune-A-Video-library/Tune-A-Video-Training-UI)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb)
 
 
 <p align="center">
@@ -28,7 +28,8 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 </p>
 
 ## News
-- [02/03/2023] Checkout our latest results tuned on [Modern Disney](https://huggingface.co/nitrosocke/mo-di-diffusion) and [Redshift](https://huggingface.co/nitrosocke/redshift-diffusion). 
+- [02/08/2023] [Colab demo](https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb) released!
+- [02/03/2023] Checkout our latest results tuned on [Modern Disney](https://huggingface.co/nitrosocke/mo-di-diffusion) and [Redshift](https://huggingface.co/nitrosocke/redshift-diffusion). Pre-trained Tune-A-Video models are available on [Hugging Face Library](https://huggingface.co/spaces/Tune-A-Video-library).
 - [01/28/2023] New Feature: tune a video on personalized [DreamBooth](https://dreambooth.github.io/) models.
 - [01/28/2023] Code released!
 
