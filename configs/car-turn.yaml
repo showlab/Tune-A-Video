@@ -1,0 +1,41 @@
+pretrained_model_path: "./checkpoints/stable-diffusion-v1-4"
+output_dir: "./outputs/car-turn"
+
+train_data:
+  video_path: "data/car-turn.mp4"
+  prompt: "a jeep car is moving on the road"
+  n_sample_frames: 24
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 2
+
+validation_data:
+  prompts:
+    - "a jeep car is moving on the beach"
+    - "a jeep car is moving on the snow"
+    - "a jeep car is moving on the road, cartoon style"
+    - "a sports car is moving on the road"
+  video_length: 24
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+
+learning_rate: 3e-5
+train_batch_size: 1
+max_train_steps: 500
+checkpointing_steps: 1000
+validation_steps: 100
+trainable_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+
+seed: 33
+mixed_precision: fp16
+use_8bit_adam: False
+gradient_checkpointing: True
+enable_xformers_memory_efficient_attention: True

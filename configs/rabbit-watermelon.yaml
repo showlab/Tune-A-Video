@@ -1,0 +1,41 @@
+pretrained_model_path: "./checkpoints/stable-diffusion-v1-4"
+output_dir: "./outputs/rabbit-watermelon"
+
+train_data:
+  video_path: "data/rabbit-watermelon.mp4"
+  prompt: "a rabbit is eating a watermelon"
+  n_sample_frames: 24
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 2
+
+validation_data:
+  prompts:
+    - "a tiger is eating a watermelon"
+    - "a rabbit is eating an orange"
+    - "a rabbit is eating a pizza"
+    - "a puppy is eating an orange"
+  video_length: 24
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+
+learning_rate: 3e-5
+train_batch_size: 1
+max_train_steps: 500
+checkpointing_steps: 1000
+validation_steps: 100
+trainable_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+
+seed: 33
+mixed_precision: fp16
+use_8bit_adam: False
+gradient_checkpointing: True
+enable_xformers_memory_efficient_attention: True
