@@ -26,7 +26,7 @@ from transformers import CLIPTextModel, CLIPTokenizer
 from tuneavideo.models.unet import UNet3DConditionModel
 from tuneavideo.data.dataset import TuneAVideoDataset
 from tuneavideo.pipelines.pipeline_tuneavideo import TuneAVideoPipeline
-from tuneavideo.util import save_videos_grid
+from tuneavideo.util import save_videos_grid, ddim_inversion
 from einops import rearrange
 
 
@@ -94,9 +94,11 @@ def main(
 
     # Handle the output folder creation
     if accelerator.is_main_process:
-        now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
-        output_dir = os.path.join(output_dir, now)
+        # now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+        # output_dir = os.path.join(output_dir, now)
         os.makedirs(output_dir, exist_ok=True)
+        os.makedirs(f"{output_dir}/samples", exist_ok=True)
+        os.makedirs(f"{output_dir}/inv_latents", exist_ok=True)
         OmegaConf.save(config, os.path.join(output_dir, 'config.yaml'))
 
     # Load scheduler, tokenizer and models.
@@ -169,6 +171,9 @@ def main(
         vae=vae, text_encoder=text_encoder, tokenizer=tokenizer, unet=unet,
         scheduler=DDIMScheduler.from_pretrained(pretrained_model_path, subfolder="scheduler")
     )
+    validation_pipeline.enable_vae_slicing()
+    ddim_inv_scheduler = DDIMScheduler.from_pretrained(pretrained_model_path, subfolder='scheduler')
+    ddim_inv_scheduler.set_timesteps(validation_data.num_inv_steps)
 
     # Scheduler
     lr_scheduler = get_scheduler(
@@ -311,15 +316,25 @@ def main(
 
                 if global_step % validation_steps == 0:
                     if accelerator.is_main_process:
-                        save_path = os.path.join(output_dir, f"samples/sample-{global_step}.gif")
                         samples = []
                         generator = torch.Generator(device=latents.device)
                         generator.manual_seed(seed)
+
+                        ddim_inv_latent = None
+                        if validation_data.use_inv_latent:
+                            inv_latents_path = os.path.join(output_dir, f"inv_latents/ddim_latent-{global_step}.pt")
+                            ddim_inv_latent = ddim_inversion(
+                                validation_pipeline, ddim_inv_scheduler, video_latent=latents,
+                                num_inv_steps=validation_data.num_inv_steps, prompt="")[-1].to(weight_dtype)
+                            torch.save(ddim_inv_latent, inv_latents_path)
+
                         for idx, prompt in enumerate(validation_data.prompts):
-                            sample = validation_pipeline(prompt, generator=generator, **validation_data).videos
-                            save_videos_grid(sample, os.path.join(output_dir, f"samples/sample-{global_step}/{prompt}.gif"))
+                            sample = validation_pipeline(prompt, generator=generator, latents=ddim_inv_latent,
+                                                         **validation_data).videos
+                            save_videos_grid(sample, f"{output_dir}/samples/sample-{global_step}/{prompt}.gif")
                             samples.append(sample)
                         samples = torch.concat(samples)
+                        save_path = f"{output_dir}/samples/sample-{global_step}.gif"
                         save_videos_grid(samples, save_path)
                         logger.info(f"Saved samples to {save_path}")
 
