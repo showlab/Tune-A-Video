@@ -14,7 +14,7 @@ validation_data:
   prompts:
     - "mickey mouse is skiing on the snow"
     - "spider man is skiing on the beach, cartoon style"
-    - "wonder woman, wearing a cowboy hat, is skiing”"
+    - "wonder woman, wearing a cowboy hat, is skiing"
     - "a man, wearing pink clothes, is skiing at sunset"
   video_length: 24
   width: 512
