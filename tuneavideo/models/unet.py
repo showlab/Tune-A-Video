@@ -139,7 +139,7 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
             self.down_blocks.append(down_block)
 
         # mid
-        if mid_block_type == "UNetMidBlock3DCrossAttn":
+        if mid_block_type in ["UNetMidBlock3DCrossAttn","UNetMidBlock2DCrossAttn"]:
             self.mid_block = UNetMidBlock3DCrossAttn(
                 in_channels=block_out_channels[-1],
                 temb_channels=time_embed_dim,
