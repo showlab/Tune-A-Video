@@ -91,13 +91,14 @@ save_videos_grid(video, f"./{prompt}.gif")
 
 ## Results
 
+### Pretrained T2I (Stable Diffusion)
 <table class="center">
 <tr>
-  <td style="text-align:center;">Training Video</td>
-  <td style="text-align:center;" colspan="3">Generated Video</td>
+  <td style="text-align:center;"><b>Input Video</b></td>
+  <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
 </tr>
 <tr>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-skiing/train.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/man-skiing.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-skiing/spiderman-beach.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-skiing/wonder-woman.gif"></td>              
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-skiing/pink-sunset.gif"></td>
@@ -110,20 +111,20 @@ save_videos_grid(video, f"./{prompt}.gif")
 </tr>
 
 <tr>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/train.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/rabbit-pizza.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/puppy-orange.gif"></td>              
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/tiger-watermelon.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/rabbit-watermelon.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/rabbit.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/cat.gif"></td>              
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/puppy.gif"></td>
 </tr>
 <tr>
   <td width=25% style="text-align:center;color:gray;">"A rabbit is eating a watermelon"</td>
-  <td width=25% style="text-align:center;">"A rabbit is eating a pizza"</td>
-  <td width=25% style="text-align:center;">"A puppy is eating an orange"</td>
-  <td width=25% style="text-align:center;">"A tiger is eating a watermelon"</td>
+  <td width=25% style="text-align:center;">"A rabbit is <del>eating a watermelon</del> on the table"</td>
+  <td width=25% style="text-align:center;">"A cat with sunglasses is eating a watermelon on the beach"</td>
+  <td width=25% style="text-align:center;">"A puppy is eating a cheeseburger on the table, comic style"</td>
 </tr>
 
 <tr>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/car-turn/train.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/car-turn.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/car-turn/porsche-beach.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/car-turn/car-cartoon.gif"></td>              
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/car-turn/car-snow.gif"></td>
@@ -136,20 +137,20 @@ save_videos_grid(video, f"./{prompt}.gif")
 </tr>
 
 <tr>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/train.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/man-basketball.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/trump.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/ironman.gif"></td>              
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/monkey.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/astronaut.gif"></td>              
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/lego.gif"></td>
 </tr>
 <tr>
   <td width=25% style="text-align:center;color:gray;">"A man is dribbling a basketball"</td>
   <td width=25% style="text-align:center;">"Trump is dribbling a basketball"</td>
-  <td width=25% style="text-align:center;">"Iron Man is dribbling a basketball"</td>
-  <td width=25% style="text-align:center;">"A monkey is dribbling a basketball"</td>
+  <td width=25% style="text-align:center;">"An astronaut is dribbling a basketball, cartoon style"</td>
+  <td width=25% style="text-align:center;">"A lego man in a black suit is dribbling a basketball"</td>
 </tr>
 
-<tr>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/train.gif"></td>
+<!-- <tr>
+  <td><img src="https://tuneavideo.github.io/assets/data/lion-roaring.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/tiger-roar.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/lion-vangogh.gif"></td>              
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/wolf-nyc.gif"></td>
@@ -159,6 +160,51 @@ save_videos_grid(video, f"./{prompt}.gif")
   <td width=25% style="text-align:center;">"A tiger is roaring"</td>
   <td width=25% style="text-align:center;">"A lion is roaring, Van Gogh style"</td>
   <td width=25% style="text-align:center;">"A wolf is roaring in New York City"</td>
+</tr> -->
+
+</table>
+
+### Pretrained T2I (personalized DreamBooth)
+
+<img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/modern-disney.png" width="240px"/>  
+
+<table class="center">
+<tr>
+  <td style="text-align:center;"><b>Input Video</b></td>
+  <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
+</tr>
+<tr>
+  <td><img src="https://github.com/tuneavideo/tuneavideo.github.io/blob/main/assets/data/bear-guitar.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/rabbit.gif"></td>      
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/prince.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/princess.gif"></td>
+</tr>
+<tr>
+  <td width=25% style="text-align:center;color:gray;">"A bear is playing guitar"</td>
+  <td width=25% style="text-align:center;">"A rabbit is playing guitar, modern disney style"</td>
+  <td width=25% style="text-align:center;">"A handsome prince is playing guitar, modern disney style"</td>
+  <td width=25% style="text-align:center;">"A magic princess with sunglasses is playing guitar on the stage, modern disney style"</td>
+</tr>
+</table>
+
+<img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/mr-potato-head.png" width="240px"/>  
+
+<table class="center">
+<tr>
+  <td style="text-align:center;"><b>Input Video</b></td>
+  <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
+</tr>
+<tr>
+  <td><img src="https://github.com/tuneavideo/tuneavideo.github.io/blob/main/assets/data/bear-guitar.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/lego-snow.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/sunglasses-beach.gif"></td>      
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/van-gogh.gif"></td>
+</tr>
+<tr>
+  <td width=25% style="text-align:center;color:gray;">"A bear is playing guitar"</td>
+  <td width=25% style="text-align:center;">"Mr Potato Head, made of lego, is playing guitar on the snow"</td>
+  <td width=25% style="text-align:center;">"Mr Potato Head, wearing sunglasses, is playing guitar on the beach"</td>
+  <td width=25% style="text-align:center;">"Mr Potato Head is playing guitar in the starry night, Van Gogh style"</td>
 </tr>
 </table>
 
