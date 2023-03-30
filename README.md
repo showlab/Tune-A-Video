@@ -9,6 +9,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 [Xintao Wang](https://xinntao.github.io/), 
 [Stan Weixian Lei](), 
 [Yuchao Gu](https://ycgu.site/), 
+[Yufei Shi](),
 [Wynne Hsu](https://www.comp.nus.edu.sg/~whsu/), 
 [Ying Shan](https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en), 
 [Xiaohu Qie](https://scholar.google.com/citations?user=mk-F69UAAAAJ&hl=en), 
@@ -22,7 +23,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 
 
 <p align="center">
-<img src="https://tuneavideo.github.io/assets/overview.png" width="800px"/>  
+<img src="https://tuneavideo.github.io/assets/teaser.gif" width="1080px"/>  
 <br>
 <em>Given a video-text pair as input, our method, Tune-A-Video, fine-tunes a pre-trained text-to-image diffusion model for text-to-video generation.</em>
 </p>
@@ -47,7 +48,7 @@ To enable xformers, set `enable_xformers_memory_efficient_attention=True` (defau
 
 ### Weights
 
-**[Stable Diffusion]** [Stable Diffusion](https://arxiv.org/abs/2112.10752) is a latent text-to-image diffusion model capable of generating photo-realistic images given any text input. The pre-trained Stable Diffusion models can be downloaded from Hugging Face (e.g., [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4), [v2-1](https://huggingface.co/stabilityai/stable-diffusion-2-1)). You can also use fine-tuned Stable Diffusion models trained on different styles (e.g, [Modern Disney](https://huggingface.co/nitrosocke/mo-di-diffusion), [Redshift](https://huggingface.co/nitrosocke/redshift-diffusion), etc.).
+**[Stable Diffusion]** [Stable Diffusion](https://arxiv.org/abs/2112.10752) is a latent text-to-image diffusion model capable of generating photo-realistic images given any text input. The pre-trained Stable Diffusion models can be downloaded from Hugging Face (e.g., [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4), [v2-1](https://huggingface.co/stabilityai/stable-diffusion-2-1)). You can also use fine-tuned Stable Diffusion models trained on different styles (e.g, [Modern Disney](https://huggingface.co/nitrosocke/mo-di-diffusion), [Anything V4.0](https://huggingface.co/andite/anything-v4.0), [Redshift](https://huggingface.co/nitrosocke/redshift-diffusion), etc.).
 
 **[DreamBooth]** [DreamBooth](https://dreambooth.github.io/) is a method to personalize text-to-image models like Stable Diffusion given just a few images (3~5 images) of a subject. Tuning a video on DreamBooth models allows personalized text-to-video generation of a specific subject. There are some public DreamBooth models available on [Hugging Face](https://huggingface.co/sd-dreambooth-library) (e.g., [mr-potato-head](https://huggingface.co/sd-dreambooth-library/mr-potato-head)). You can also train your own DreamBooth model following [this training example](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth). 
 
@@ -138,13 +139,13 @@ save_videos_grid(video, f"./{prompt}.gif")
 
 <tr>
   <td><img src="https://tuneavideo.github.io/assets/data/man-basketball.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/trump.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/bond.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/astronaut.gif"></td>              
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/man-basketball/lego.gif"></td>
 </tr>
 <tr>
   <td width=25% style="text-align:center;color:gray;">"A man is dribbling a basketball"</td>
-  <td width=25% style="text-align:center;">"Trump is dribbling a basketball"</td>
+  <td width=25% style="text-align:center;">"James Bond is dribbling a basketball on the beach"</td>
   <td width=25% style="text-align:center;">"An astronaut is dribbling a basketball, cartoon style"</td>
   <td width=25% style="text-align:center;">"A lego man in a black suit is dribbling a basketball"</td>
 </tr>
@@ -166,7 +167,7 @@ save_videos_grid(video, f"./{prompt}.gif")
 
 ### Pretrained T2I (personalized DreamBooth)
 
-<img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/modern-disney.png" width="240px"/>  
+<a href="https://huggingface.co/andite/anything-v4.0"><img src="https://tuneavideo.github.io/assets/results/tuneavideo/anything-v4/anything-v4.png" width="240px"/></a>
 
 <table class="center">
 <tr>
@@ -174,7 +175,29 @@ save_videos_grid(video, f"./{prompt}.gif")
   <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
 </tr>
 <tr>
-  <td><img src="https://github.com/tuneavideo/tuneavideo.github.io/blob/main/assets/data/bear-guitar.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/bear-guitar.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/anything-v4/bear-guitar/1girl-streets.gif"></td>      
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/anything-v4/bear-guitar/1boy-indoor.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/anything-v4/bear-guitar/1girl-beach.gif"></td>
+</tr>
+<tr>
+  <td width=25% style="text-align:center;color:gray;">"A bear is playing guitar"</td>
+  <td width=25% style="text-align:center;">"1girl is playing guitar, white hair, medium hair, cat ears, closed eyes, cute, scarf, jacket, outdoors, streets"</td>
+  <td width=25% style="text-align:center;">"1boy is playing guitar, bishounen, casual, indoors, sitting, coffee shop, bokeh"</td>
+  <td width=25% style="text-align:center;">"1girl is playing guitar, red hair, long hair, beautiful eyes, looking at viewer, cute, dress, beach, sea"</td>
+</tr>
+</table>
+
+
+<a href="https://huggingface.co/nitrosocke/mo-di-diffusion"><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/modern-disney.png" width="240px"/></a> 
+
+<table class="center">
+<tr>
+  <td style="text-align:center;"><b>Input Video</b></td>
+  <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
+</tr>
+<tr>
+  <td><img src="https://tuneavideo.github.io/assets/data/bear-guitar.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/rabbit.gif"></td>      
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/prince.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/modern-disney/bear-guitar/princess.gif"></td>
@@ -187,7 +210,7 @@ save_videos_grid(video, f"./{prompt}.gif")
 </tr>
 </table>
 
-<img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/mr-potato-head.png" width="240px"/>  
+<a href="https://huggingface.co/sd-dreambooth-library/mr-potato-head"><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/mr-potato-head.png" width="240px"/></a>
 
 <table class="center">
 <tr>
@@ -195,7 +218,7 @@ save_videos_grid(video, f"./{prompt}.gif")
   <td style="text-align:center;" colspan="3"><b>Output Video</b></td>
 </tr>
 <tr>
-  <td><img src="https://github.com/tuneavideo/tuneavideo.github.io/blob/main/assets/data/bear-guitar.gif"></td>
+  <td><img src="https://tuneavideo.github.io/assets/data/bear-guitar.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/lego-snow.gif"></td>
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/sunglasses-beach.gif"></td>      
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/mr-potato-head/bear-guitar/van-gogh.gif"></td>
