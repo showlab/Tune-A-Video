@@ -29,7 +29,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 </p>
 
 ## News
-### 🚨 Announcing [LOVE-TGVE](https://sites.google.com/view/loveucvpr23/track4): A CVPR competition for AI-based video editing! Submissions due Jun 5. Don't miss out! 🤩 
+### 🚨 Announcing [LOVEU-TGVE](https://sites.google.com/view/loveucvpr23/track4): A CVPR competition for AI-based video editing! Submissions due Jun 5. Don't miss out! 🤩 
 - [02/22/2023] Improved consistency using DDIM inversion.
 - [02/08/2023] [Colab demo](https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb) released!
 - [02/03/2023] Pre-trained Tune-A-Video models are available on [Hugging Face Library](https://huggingface.co/Tune-A-Video-library)!
