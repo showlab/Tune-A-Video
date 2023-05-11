@@ -29,6 +29,7 @@ This repository is the official implementation of [Tune-A-Video](https://arxiv.o
 </p>
 
 ## News
+### 🚨 Announcing [LOVE-TGVE](https://sites.google.com/view/loveucvpr23/track4): A CVPR competition for AI-based video editing! Submissions due Jun 5. Don't miss out! 🤩 
 - [02/22/2023] Improved consistency using DDIM inversion.
 - [02/08/2023] [Colab demo](https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb) released!
 - [02/03/2023] Pre-trained Tune-A-Video models are available on [Hugging Face Library](https://huggingface.co/Tune-A-Video-library)!
@@ -118,7 +119,7 @@ save_videos_grid(video, f"./{prompt}.gif")
   <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/rabbit-watermelon/puppy.gif"></td>
 </tr>
 <tr>
-  <td width=25% style="text-align:center;color:gray;">"A rabbit is eating a watermelon"</td>
+  <td width=25% style="text-align:center;color:gray;">"A rabbit is eating a watermelon on the table"</td>
   <td width=25% style="text-align:center;">"A rabbit is <del>eating a watermelon</del> on the table"</td>
   <td width=25% style="text-align:center;">"A cat with sunglasses is eating a watermelon on the beach"</td>
   <td width=25% style="text-align:center;">"A puppy is eating a cheeseburger on the table, comic style"</td>
@@ -149,20 +150,6 @@ save_videos_grid(video, f"./{prompt}.gif")
   <td width=25% style="text-align:center;">"An astronaut is dribbling a basketball, cartoon style"</td>
   <td width=25% style="text-align:center;">"A lego man in a black suit is dribbling a basketball"</td>
 </tr>
-
-<!-- <tr>
-  <td><img src="https://tuneavideo.github.io/assets/data/lion-roaring.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/tiger-roar.gif"></td>
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/lion-vangogh.gif"></td>              
-  <td><img src="https://tuneavideo.github.io/assets/results/tuneavideo/lion-roaring/wolf-nyc.gif"></td>
-</tr>
-<tr>
-  <td width=25% style="text-align:center;color:gray;">"A lion is roaring"</td>
-  <td width=25% style="text-align:center;">"A tiger is roaring"</td>
-  <td width=25% style="text-align:center;">"A lion is roaring, Van Gogh style"</td>
-  <td width=25% style="text-align:center;">"A wolf is roaring in New York City"</td>
-</tr> -->
-
 </table>
 
 ### Pretrained T2I (personalized DreamBooth)
