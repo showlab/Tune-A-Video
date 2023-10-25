@@ -222,11 +222,12 @@ save_videos_grid(video, f"./{prompt}.gif")
 ## Citation
 If you make use of our work, please cite our paper.
 ```bibtex
-@article{wu2022tuneavideo,
-    title={Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation},
-    author={Wu, Jay Zhangjie and Ge, Yixiao and Wang, Xintao and Lei, Stan Weixian and Gu, Yuchao and Hsu, Wynne and Shan, Ying and Qie, Xiaohu and Shou, Mike Zheng},
-    journal={arXiv preprint arXiv:2212.11565},
-    year={2022}
+@inproceedings{wu2023tune,
+  title={Tune-a-video: One-shot tuning of image diffusion models for text-to-video generation},
+  author={Wu, Jay Zhangjie and Ge, Yixiao and Wang, Xintao and Lei, Stan Weixian and Gu, Yuchao and Shi, Yufei and Hsu, Wynne and Shan, Ying and Qie, Xiaohu and Shou, Mike Zheng},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={7623--7633},
+  year={2023}
 }
 ```
 
